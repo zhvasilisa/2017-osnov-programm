@@ -27,9 +27,6 @@ for line in sys.stdin.readlines():
 		t[tag] = 0
 	t[tag] = t[tag] + 1
 
-print(t)
-print(total)
-
 print('# P\tcount\ttag\tform', file=open("output.txt", "w"))
 
 for tag in t:
@@ -43,4 +40,4 @@ for form in m:
 	for tag in m[form]:	
 		pair_prob = m[form][tag]/form_freq
 		print('%.2f\t%d\t%s\t%s'  % (pair_prob, m[form][tag], tag, form), file=open("output.txt", "a"))
-	
+
