@@ -29,6 +29,7 @@ for line in model.readlines():
 # 	Read the input
 
 for line in sys.stdin.readlines():
+	line = line.strip()
 	if '\t' not in line:
 		print(line)
 		continue
