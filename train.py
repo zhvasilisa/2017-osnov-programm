@@ -27,11 +27,11 @@ for line in sys.stdin.readlines():
 		t[tag] = 0
 	t[tag] = t[tag] + 1
 
-print('# P\tcount\ttag\tform', file=open("output.txt", "w"))
+print('# P\tcount\ttag\tform', file=open("model.tsv", "w"))
 
 for tag in t:
 	tag_prob = t[tag]/total
-	print('%.2f\t%d\t%s\t_'  % (tag_prob, t[tag], tag), file=open("output.txt", "a"))
+	print('%.2f\t%d\t%s\t_'  % (tag_prob, t[tag], tag), file=open("model.tsv", "a"))
 
 for form in m:
 	form_freq = 0
@@ -39,5 +39,5 @@ for form in m:
 		form_freq = form_freq + m[form][tag]
 	for tag in m[form]:	
 		pair_prob = m[form][tag]/form_freq
-		print('%.2f\t%d\t%s\t%s'  % (pair_prob, m[form][tag], tag, form), file=open("output.txt", "a"))
+		print('%.2f\t%d\t%s\t%s'  % (pair_prob, m[form][tag], tag, form), file=open("model.tsv", "a"))
 
