@@ -23,3 +23,4 @@ for line in sys.stdin.readlines():
 			print('%d\t%s\t_\t_\t_\t_\t_\t_\t_\t_' %(token_id, token))
 			token_id = token_id + 1
 		sent_id = sent_id + 1
+		print('\n')
